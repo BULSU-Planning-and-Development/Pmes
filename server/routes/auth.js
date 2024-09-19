@@ -7,13 +7,13 @@ const User = require('../models/User');
 
 // Register Route
 router.post('/register', async (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, role } = req.body; // Accept role from the frontend
 
   try {
     let user = await User.findOne({ username });
     if (user) return res.status(400).json({ msg: 'User already exists' });
 
-    user = new User({ username, password });
+    user = new User({ username, password, role: role || 'user' }); // Default role to 'user'
 
     // Hash Password
     const salt = await bcrypt.genSalt(10);
@@ -21,7 +21,7 @@ router.post('/register', async (req, res) => {
 
     await user.save();
 
-    // Return JWT
+    // Return JWT and user information
     const payload = { userId: user.id };
     jwt.sign(
       payload,
@@ -29,7 +29,10 @@ router.post('/register', async (req, res) => {
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.json({ 
+          token, 
+          user: { id: user._id, username: user.username, role: user.role } 
+        });
       }
     );
   } catch (err) {
@@ -49,7 +52,7 @@ router.post('/login', async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: 'Invalid Credentials' });
 
-    // Return JWT
+    // Return JWT and user info (including role)
     const payload = { userId: user.id };
     jwt.sign(
       payload,
@@ -57,7 +60,10 @@ router.post('/login', async (req, res) => {
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.json({ 
+          token, 
+          user: { id: user._id, username: user.username, role: user.role } // Include role in the response
+        });
       }
     );
   } catch (err) {
@@ -66,9 +72,9 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Protected Route Example
+// Protected Route Example (for authenticated user details)
 router.get('/me', async (req, res) => {
-  // Middleware to verify token would go here
+  // This route should use middleware to authenticate token and return user data
 });
 
 module.exports = router;
