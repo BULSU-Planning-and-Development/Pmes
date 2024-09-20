@@ -1,44 +1,41 @@
 // src/auth/Register.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useAuthStore from '../store/authStore';
 
 const Register = () => {
-  const { register, loading, error } = useAuthStore();
+  const { register, error, loading } = useAuthStore();
   const [formData, setFormData] = useState({ username: '', password: '', role: 'user' });
+  const navigate = useNavigate();
 
-  const onChange = (e) =>
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const onSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await register(formData.username, formData.password, formData.role);
+    navigate('/login');
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit}>
       <input
+        type="text"
         name="username"
         value={formData.username}
-        onChange={onChange}
+        onChange={handleChange}
         placeholder="Username"
         required
       />
       <input
-        name="password"
         type="password"
+        name="password"
         value={formData.password}
-        onChange={onChange}
+        onChange={handleChange}
         placeholder="Password"
         required
       />
-      <select
-        name="role"
-        value={formData.role}
-        onChange={onChange}
-      >
-        <option value="user">User</option>
-        <option value="admin">Admin</option>
-      </select>
       <button type="submit" disabled={loading}>
         Register
       </button>

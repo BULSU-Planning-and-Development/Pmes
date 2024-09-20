@@ -1,28 +1,27 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './auth/Login';
-import HomePage from './pages/User/HomePage';
-import DashboardPage from './pages/User/DashboardPage'; // For users
 import Register from './auth/Register';
-import PrivateRoute from './components/Common/PrivateRoute';
+import UserRoutes from './routes/UserRoutes';
+import AdminRoutes from './routes/AdminRoutes';
+import HomePage from './pages/HomePage'; // Import the HomePage component
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Public routes */}
+        {/* Public Routes */}
+        <Route path="/" element={<HomePage />} /> {/* Home Page */}
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<HomePage />} />
-        
         <Route path="/register" element={<Register />} />
-        {/* Private user route */}
-        <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
-        
-        {/* Private admin route */}
-        {/* <Route path="/admin/dashboard" element={<PrivateRoute><AdminDashboardPage /></PrivateRoute>} /> */}
+
+        {/* Admin and User Routes */}
+        <Route path="/admin/*" element={<AdminRoutes />} />
+        <Route path="/*" element={<UserRoutes />} />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
