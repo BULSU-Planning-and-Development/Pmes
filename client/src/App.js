@@ -1,24 +1,24 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AdminRoutes from './routes/AdminRoutes';
+import UserRoutes from './routes/UserRoutes';
 import Login from './auth/Login';
 import Register from './auth/Register';
-import UserRoutes from './routes/UserRoutes';
-import AdminRoutes from './routes/AdminRoutes';
-import HomePage from './pages/HomePage'; // Import the HomePage component
 
 const App = () => {
+  console.log('App is rendering');
+
   return (
     <Router>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<HomePage />} /> {/* Home Page */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* Admin and User Routes */}
-        <Route path="/admin/*" element={<AdminRoutes />} />
+        {/* Protected Routes */}
         <Route path="/*" element={<UserRoutes />} />
+        <Route path="/admin/*" element={<AdminRoutes />} />
       </Routes>
     </Router>
   );
