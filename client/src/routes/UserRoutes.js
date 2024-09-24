@@ -10,12 +10,11 @@ const UserRoutes = () => {
       <Route
         path="/dashboard"
         element={
-          <PrivateRoute>
+          <PrivateRoute roles={['user']}>
             <UserDashboard />
           </PrivateRoute>
         }
       />
-      {/* Add other user routes here */}
     </Routes>
   );
 };

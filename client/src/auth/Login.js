@@ -18,14 +18,16 @@ const Login = () => {
   };
 
   useEffect(() => {
+    console.log('User after login:', user); // Verify the user object
     if (user) {
       if (user.role === 'admin') {
         navigate('/admin/dashboard');
-      } else {
-        navigate('/dashboard');
+      } else if (user.role === 'user') {
+        navigate('/dashboard'); // This should navigate to the user dashboard
       }
     }
   }, [user, navigate]);
+  
 
   return (
     <form onSubmit={handleSubmit}>

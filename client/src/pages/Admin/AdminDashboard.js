@@ -3,9 +3,9 @@ import React from 'react';
 
 const AdminDashboard = () => {
   return (
-    <div>
+    <div style={{ padding: '20px' }}>
       <h1>Admin Dashboard</h1>
-      <p>Welcome to the admin dashboard!</p>
+      <p>This is the admin dashboard.</p>
     </div>
   );
 };

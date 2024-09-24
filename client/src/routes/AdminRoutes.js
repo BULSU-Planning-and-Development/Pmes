@@ -8,14 +8,13 @@ const AdminRoutes = () => {
   return (
     <Routes>
       <Route
-        path="/admin/dashboard"
+        path="dashboard"
         element={
           <PrivateRoute>
             <AdminDashboard />
           </PrivateRoute>
         }
       />
-      {/* Add other admin routes here */}
     </Routes>
   );
 };
