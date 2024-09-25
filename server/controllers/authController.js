@@ -45,3 +45,31 @@ exports.login = async (req, res) => {
     res.status(500).send('Server Error');
   }
 };
+
+// Get all users (For admin only)
+exports.getAllUsers = async (req, res) => {
+  try{
+    const users = await User.find().select('-password');
+    res.json(users);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+}
+
+// Update a user's role
+exports.updateUserRole = async (req, res) => {
+  const { userId, role } = req.body;
+
+  try {
+    let user = await User.findById(userId);
+    if (!user) return res.status(404).json({ msg: 'User not found' });
+
+    user.role = role;
+    await user.save();
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
