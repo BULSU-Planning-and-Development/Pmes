@@ -8,8 +8,6 @@ import Login from './auth/Login';
 import Register from './auth/Register';
 
 const App = () => {
-  console.log('App is rendering');
-
   return (
     <Router>
       <Routes>

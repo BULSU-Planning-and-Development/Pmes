@@ -18,7 +18,6 @@ const Login = () => {
   };
 
   useEffect(() => {
-    console.log('User after login:', user); // Verify the user object
     if (user) {
       if (user.role === 'admin') {
         navigate('/admin/dashboard');
