@@ -1,0 +1,1548 @@
+@import url('https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;700&display=swap');
+
+/* Landing Page */
+
+#landing_page {
+  overflow-x: hidden;
+}
+
+/* Intro */
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  animation: showing 2000ms ease-in-out 2100ms forwards;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#intro > img {
+  animation: animateLogo 1000ms ease-in-out 1000ms forwards;
+  width: 100%;
+  width: 120px;
+  height: 120px;
+}
+
+#intro > .rectangle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: up 700ms ease-in-out 1700ms forwards;
+  transform: translate3d(0px, -101%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); 
+  transform-style: preserve-3d;
+  width: 100%;
+  background-color: var(--tahiti-gold);
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0);
+  }
+
+  5% {
+    transform: translateY(10px);
+    height: 20px;
+  }
+
+  10% {
+    height: 600px;
+  }
+
+  75% {
+    height: 100px;
+  }
+
+  100% {
+    transform: translateY(-1000px);
+    height: 40px;
+  }
+}
+
+@keyframes showing {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@keyframes animateLogo {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* Chat Bot Button */
+
+#chatBotButton {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  animation: chatBotShowUp 500ms ease-in-out 5000ms forwards;
+  transition: all 300ms ease-in-out;
+  z-index: 100;
+  opacity: 0;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+}
+
+#chatBotButton:hover {
+  background-color: rgb(192, 95, 10);
+}
+
+@keyframes chatBotShowUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  50%  {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Container */
+
+#landing_page > .container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Navigation Bar */
+
+#landing_page > .container > #navigation_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 300ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  height: 64px;
+  background-color: var(--white);
+}
+
+#landing_page > .container > #navigation_bar.show-shadow {
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.25);
+}
+
+#landing_page > .container > #navigation_bar.hide-shadow {
+  box-shadow: none;
+}
+
+/* Navigation */
+
+#landing_page > .container > #navigation_bar > nav {
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: var(--white);
+}
+
+#landing_page > .container > #navigation_bar > nav > .logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#landing_page > .container > #navigation_bar > nav > .logos > .logo {
+  animation: popup 1100ms ease-in-out 2500ms forwards;
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+}
+
+#landing_page > .container > #navigation_bar > nav > .actions {
+  animation: heroContentsShowUp 1100ms ease-in-out 2500ms forwards;
+  opacity: 0;
+  display: none;
+}
+
+/* Hamburger Menu Button */
+
+#landing_page > .container > #navigation_bar > nav > #hamburgerMenuButton {
+  animation: heroContentsShowUp 1000ms ease-in-out 2500ms forwards;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#landing_page > .container > #navigation_bar > nav > #hamburgerMenuButton > .bar {
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  transition: transform 300ms ease-in-out;
+}
+
+#landing_page > .container > #navigation_bar > nav > #hamburgerMenuButton.menu-open > .bar:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 3px);
+}
+
+#landing_page > .container > #navigation_bar > nav > #hamburgerMenuButton.menu-open > .bar:nth-child(2) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Menu */
+
+#landing_page > .container > #navigation_bar > .menu {
+  position: relative;
+  transform: translateY(-100%); 
+  transition: transform 0.3s ease;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px 20px 40px;
+  box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.25);
+  border-top: 1px solid var(--gray);
+  background-color: var(--white);
+}
+
+#landing_page > .container > #navigation_bar > .menu > a {
+  color: var(--arsenic-gray);
+  font-weight: 500;
+}
+
+#landing_page > .container > #navigation_bar > .menu > .btn {
+  color: var(--white);
+}
+
+#landing_page > .container > #navigation_bar > .menu.open {
+  visibility: visible;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+}
+
+/* Hero */
+
+#landing_page > .container > #hero {
+  overflow: hidden;
+  position: relative;
+  margin-top: 64px;
+  padding: 64px 24px 100px;
+}
+
+/* Header */
+
+#landing_page > .container > #hero > .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+#landing_page > .container > #hero > .header > .badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#landing_page > .container > #hero > .header > .badges > .badge {
+  animation: heroContentsShowUp 1000ms ease-in-out 2000ms forwards;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+
+#landing_page > .container > #hero > .header > .badges > .badge:first-child {
+  border: 1px solid var(--tahiti-gold);
+  background-color: #FBE4CF;
+}
+
+#landing_page > .container > #hero > .header > .badges > .badge:first-child > p {
+  color: var(--tahiti-gold) !important;
+}
+
+#landing_page > .container > #hero > .header > .badges > .badge:last-child {
+  transition: all 250ms ease-in-out;
+  border: 1px solid var(--dark-gray);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+#landing_page > .container > #hero > .header > .badges > .badge:last-child:hover {
+  background-color: var(--light-gray);
+}
+
+#landing_page > .container > #hero > .header > .badges > .badge > p {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#landing_page > .container > #hero > .header > .badges > .badge:last-child > p {
+  color: var(--arsenic-gray);
+}
+
+#landing_page > .container > #hero > .header > h1,
+#landing_page > .container > #hero > .header > p {
+  animation: heroContentsShowUp 1000ms ease-in-out 2000ms forwards;
+  opacity: 0;
+  text-align: center;
+}
+
+#landing_page > .container > #hero > .header > h1 {
+  opacity: 0;
+  font-size: 40px;
+}
+
+#landing_page > .container > #hero > .header > p {
+  animation: heroContentsShowUp 1000ms ease-in-out 2300ms forwards;
+  color: var(--arsenic-gray);
+  font-size: 16px;
+}
+
+#landing_page > .container > #hero > .header > .btn {
+  animation: heroContentsShowUp 1000ms ease-in-out 2000ms forwards;
+  opacity: 0;
+  padding: 10px 20px;
+  border-radius: 100px;
+}
+
+/* Arrow */
+
+#landing_page > .container > #hero > .wrapper > .arrow {
+  position: absolute;
+  top: 455px;
+  right: 25px;
+  animation: heroContentsShowUp 1000ms ease-in-out 4500ms forwards;
+  opacity: 0;
+  height: 50px;
+}
+
+/* Hero Image */
+
+#landing_page > .container > #hero > .wrapper > .heroImageContainer {
+  position: relative;
+  margin-top: 64px;
+}
+
+#landing_page > .container > #hero > .wrapper > .heroImageContainer img {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+#landing_page > .container > #hero > .wrapper > .heroImageContainer > .mockupHeroImage {
+  animation: heroContentsShowUp 1000ms ease-in-out 2000ms forwards;
+  width: 350px;
+}
+
+#landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+  animation: popup 1100ms ease-in-out 3500ms forwards;
+  width: 100px;
+}
+
+#landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+  animation: popup 1100ms ease-out 3500ms forwards;
+  width: 150px;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  
+  100%  {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+  top: 70px;
+  left: -15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+#landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+  top: 75px;
+  right: -40px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Rectangle Background */
+
+#landing_page > .container > #hero > .rectangleBackground {
+  position: absolute;
+  top: 600px;
+  left: 0;
+  right: 0;
+  z-index: -100;
+  animation: heroContentsShowUp 1000ms ease-in-out 2500ms forwards;
+  opacity: 0;
+  height: 100%;
+  background-color: var(--persian-plum);
+}
+
+@keyframes heroContentsShowUp {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Users */
+
+#landing_page > .container > #hero > .users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 450px;
+  gap: 48px;
+}
+
+#landing_page > .container > #hero > .users > h2 {
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 1000ms ease-in-out;
+  opacity: 0;
+  color: var(--white);
+  text-align: center;
+  font-size: 20px;
+}
+
+#landing_page > .container > #hero > .users.visible > h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#landing_page > .container > #hero > .users > .logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+#landing_page > .container > #hero > .users > .logos > div {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+#landing_page > .container > #hero > .users > .logos > div > .logo {
+  transform: translateY(20px);
+  transition: opacity 1000ms ease-in-out, transform 1000ms ease-in-out;
+  opacity: 0;
+}
+
+#landing_page > .container > #hero > .users.visible > .logos > div > .logo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#landing_page > .container > #hero > .users > .logos .logo.small {
+  width: 32px;
+  height: 32px;
+}
+
+#landing_page > .container > #hero > .users > .logos .logo.large {
+  width: 48px;
+  height: 48px;
+}
+
+/* Features */
+
+#landing_page > .container > #features {
+  display: flex;
+  flex-direction: column;
+}
+
+#landing_page > .container > #features > .feature {
+  transform: translateY(20px);
+  transition: opacity 1000ms ease-in-out, transform 1000ms ease-in-out;
+  opacity: 0;
+  padding: 64px 24px;
+}
+
+#landing_page > .container > #features > .feature.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#landing_page > .container > #features > .feature > div {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+#landing_page > .container > #features > .feature > div > .headingAndParagraph {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+}
+
+#landing_page > .container > #features > .feature > div > .headingAndParagraph > h2 {
+  font-size: 24px;
+}
+
+#landing_page > .container > #features > .feature > div > .headingAndParagraph > h2 > span {
+  color: var(--persian-plum);
+}
+
+#landing_page > .container > #features > .feature:first-child > div > .headingAndParagraph > h2 > span {
+  display: block;
+}
+
+#landing_page > .container > #features > .feature:first-child > div > .headingAndParagraph > p {
+  color: var(--arsenic-gray);
+  font-weight: 500;
+}
+
+#landing_page > .container > #features > .feature > div > img {
+  border-radius: 4px;
+}
+
+#landing_page > .container > #features > .feature:first-child > div > img {
+  box-shadow: 0px 0px 5px 0px rgba(187, 187, 187, 1);
+}
+
+/* FAQs */
+
+#landing_page > .container > #faqs {
+  background-color: var(--persian-plum);
+}
+
+#landing_page > .container > #faqs > .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 80px 24px;
+}
+
+/* Heading & Paragraph */
+
+#landing_page > .container > #faqs > .wrapper > .headingAndParagraph {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#landing_page > .container > #faqs > .wrapper > .faqsHeadingAndParagraph {
+  transform: translateY(20px);
+  transition: opacity 1000ms ease-in-out, transform 1000ms ease-in-out;
+  opacity: 0;
+}
+
+#landing_page > .container > #faqs > .wrapper > .faqsHeadingAndParagraph.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#landing_page > .container > #faqs > .wrapper > .headingAndParagraph > h2 {
+  color: var(--white);
+  text-align: center;
+  font-size: 24px;
+}
+
+#landing_page > .container > #faqs > .wrapper > .headingAndParagraph > p {
+  color: var(--light-gray);
+  text-align: center;
+  font-size: 16px;
+}
+
+#landing_page > .container > #faqs > .wrapper > .headingAndParagraph > p > a {
+  color: var(--light-gray);
+  text-decoration: underline;
+}
+
+/* Stacks */
+
+#landing_page > .container > #faqs > .wrapper > .stacks {
+  transform: translateY(20px);
+  transition: opacity 500ms ease-in-out, transform 1000ms ease-in-out;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack > h3 {
+  font-size: 16px;
+}
+
+/* Categories */
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs > .tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: var(--light-gray);
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs > .tab.active {
+  background-color: #E2E2E2;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs > .tab > p {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs > .tab > .btn {
+  height: fit-content;
+}
+
+/* QA */
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: var(--dark-gray);
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown > .question {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown > .question > p {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown > .question > .btn {
+  height: fit-content;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown > .answer {
+  display: none;
+  padding-top: 14px;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown#active > .answer {
+  display: block;
+}
+
+#landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown > .answer > p {
+  color: var(--arsenic-gray);
+  font-size: 12px;
+}
+
+/* Footer */
+
+#landing_page > .container > footer {
+  background-color: var(--black);
+}
+
+#landing_page > .container > footer > .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 80px 24px 150px;
+}
+
+/* Form */
+
+#landing_page > .container > footer > .wrapper > form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Heading & Paragraph */
+
+#landing_page > .container > footer > .wrapper > form > .headingAndParagraph {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#landing_page > .container > footer > .wrapper > form > .headingAndParagraph > h3 {
+  color: var(--white);
+  font-size: 32px;
+}
+
+#landing_page > .container > footer > .wrapper > form > .headingAndParagraph > p {
+  color: var(--light-gray);
+}
+
+/* Input Fields & Button */
+
+#landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton > .inputFields,
+#landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton > .inputFields > .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton > .inputFields .form-group > label {
+  color: var(--white);
+  font-weight: 500;
+}
+
+#landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton > .btn {
+  width: 100%;
+}
+
+/* Section */
+
+#landing_page > .container > footer > .wrapper > .section {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+#landing_page > .container > footer > .wrapper > .section > .logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#landing_page > .container > footer > .wrapper > .section > .logo > .images {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#landing_page > .container > footer > .wrapper > .section > .logo > .images > img {
+  width: 24px;
+  height: 24px;
+}
+
+#landing_page > .container > footer > .wrapper > .section > .logo > h4 {
+  width: 140px;
+  color: var(--white);
+  font-size: 12px;
+}
+
+#landing_page > .container > footer > .wrapper > .section > .info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#landing_page > .container > footer > .wrapper > .section > .info > p {
+  color: var(--light-gray);
+  font-size: 12px;
+}
+
+#landing_page > .container > footer > .wrapper > .section > .info > p > a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+#landing_page > .container > footer > .wrapper > .section > .links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#landing_page > .container > footer > .wrapper > .section > .links > * {
+  color: var(--light-gray);
+  font-size: 12px;
+}
+
+/* Screen Width: 768px */
+
+@media only screen and (min-width: 768px) {
+  /* Chat Bot Button */
+
+  #chatBotButton {
+    right: 32px;
+    bottom: 32px;
+  }
+
+  /* Navigation Bar */
+
+  #landing_page > .container > #navigation_bar {
+    height: 80px;
+  }
+
+  /* Navigation */
+
+  #landing_page > .container > #navigation_bar > nav {
+    padding: 24px 24px 24px 32px;
+  }
+
+  /* Menu */
+
+  #landing_page > .container > #navigation_bar > .menu {
+    gap: 32px;
+    padding: 32px 32px 48px;
+  }
+  
+  /* Header */
+
+  #landing_page > .container > #hero > .header > h1 {
+    font-size: 48px;
+  }
+
+  #landing_page > .container > #hero > .header > p {
+    font-size: 18px;
+  }
+
+  #landing_page > .container > #hero > .header > .btn {
+    padding: 10px 24px;
+  }
+
+  /* Arrow */
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    top: 400px;
+    right: 70px;
+    height: 64px;
+  }
+
+  /* Hero Image */
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .mockupHeroImage {
+    width: 600px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    width: 150px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    width: 250px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .mockupHeroImage {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    top: 117px;
+    left: 30px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    top: 135px;
+    right: -35px;
+  }
+
+  /* Rectangle Background */
+
+  #landing_page > .container > #hero > .rectangleBackground {
+    top: 650px;
+  }
+
+  /* Users */
+
+  #landing_page > .container > #hero > .users {
+    margin-top: 630px;
+    gap: 64px;
+  }
+
+  #landing_page > .container > #hero > .users > h2 {
+    width: 600px;
+    font-size: 32px;
+  }
+
+  #landing_page > .container > #hero > .users > .logos .logo.small {
+    width: 48px;
+    height: 48px;
+  }
+
+  #landing_page > .container > #hero > .users > .logos .logo.large {
+    width: 64px;
+    height: 64px;
+  }
+
+  /* Features */
+
+  #landing_page > .container > #features {
+    padding: 40px 0;
+  }
+  
+  #landing_page > .container > #features > .feature {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  #landing_page > .container > #features > .feature > div {
+    gap: 64px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  #landing_page > .container > #features > .feature > div > .headingAndParagraph {
+    gap: 24px;
+    width: 500px;
+  }
+
+  #landing_page > .container > #features > .feature > div > .headingAndParagraph > h2 {
+    font-size: 32px;
+  }
+
+  #landing_page > .container > #features > .feature > div:first-child > .headingAndParagraph > p {
+    font-size: 18px;
+  }
+
+  #landing_page > .container > #features > .feature > div > img {
+    width: 420px;
+  }
+
+  /* FAQs */
+
+  #landing_page > .container > #faqs > .wrapper {
+    gap: 80px;
+    padding: 100px 40px;
+  }
+
+  /* Heading & Paragraph */
+
+  #landing_page > .container > #faqs > .wrapper > .headingAndParagraph {
+    gap: 24px;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .headingAndParagraph > h2 {
+    font-size: 32px;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .headingAndParagraph > p,
+  #landing_page > .container > #faqs > .wrapper > .headingAndParagraph > p > a {
+    font-size: 18px;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack {
+    gap: 32px;
+    padding: 20px;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack > h3 {
+    font-size: 20px;
+  }
+
+  /* Categories */
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs > .tab {
+    padding: 12px;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs > .tab > p {
+    font-size: 16px;
+  }
+
+  /* QA */
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown > .question > p {
+    font-size: 16px;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown > .answer > p {
+    font-size: 14px;
+  }
+
+  /* Footer */
+
+  #landing_page > .container > footer > .wrapper {
+    gap: 100px;
+    padding: 100px 80px 200px;
+  }
+
+  /* Form */
+
+  /* Heading & Paragraph */
+
+  #landing_page > .container > footer > .wrapper > form > .headingAndParagraph {
+    gap: 24px;
+  }
+
+  /* Input Fields & Button */
+
+  #landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton {
+    gap: 40px;
+  }
+
+  #landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton > .inputFields {
+    gap: 32px;
+  }
+
+  #landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton > .inputFields > .wrap {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+  }
+
+  #landing_page > .container > footer > .wrapper > form > .inputFieldsAndButton > .inputFields > .wrap > .form-group {
+    width: 100%;
+  }
+
+  /* Section */
+
+  #landing_page > .container > footer > .wrapper > .section {
+    gap: 64px;
+  }
+
+  #landing_page > .container > footer > .wrapper > .section > .logo {
+    gap: 20px;
+  }
+
+  #landing_page > .container > footer > .wrapper > .section > .logo > .images {
+    gap: 16px;
+  }
+
+  #landing_page > .container > footer > .wrapper > .section > .logo > .images > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  #landing_page > .container > footer > .wrapper > .section > .info,
+  #landing_page > .container > footer > .wrapper > .section > .links {
+    gap: 12px;
+  }
+
+  #landing_page > .container > footer > .wrapper > .section > .info > p,
+  #landing_page > .container > footer > .wrapper > .section > .links > * {
+    font-size: 14px;
+  }
+}
+
+/* Screen Width: 1280px */
+
+@media only screen and (min-width: 1280px) {
+  /* Chat Bot Button */
+
+  #chatBotButton {
+    right: 40px;
+    bottom: 40px;
+  }
+  
+  /* Navigation */
+
+  #landing_page > .container > #navigation_bar > nav {
+    padding: 32px 100px;
+  }
+
+  #landing_page > .container > #navigation_bar > nav > .logos {
+    gap: 20px;
+  }
+  
+  #landing_page > .container > #navigation_bar > nav > .logos > .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Hamburger Menu Button */
+
+  #landing_page > .container > #navigation_bar > nav > #hamburgerMenuButton {
+    display: none;
+  }
+
+  #landing_page > .container > #navigation_bar > nav > .actions {
+    display: flex;
+  }
+
+  #landing_page > .container > #navigation_bar > nav > .actions {
+    align-items: center;
+    gap: 32px;
+  }
+
+  #landing_page > .container > #navigation_bar > nav > .actions > a {
+    color: var(--arsenic-gray);
+    font-weight: 500;
+  }
+
+  #landing_page > .container > #navigation_bar > nav > .actions > a:hover {
+    color: var(--dark-jungle-green);
+  }
+
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid {
+    color: var(--white);
+  }
+
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.text:hover {
+    color: var(--arsenic-gray);
+  }
+
+  /* #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid {
+    padding: 8px 24px;
+    border-radius: 100px;
+  } */
+
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid {
+    padding: 8px 40px;
+    border-radius: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; 
+    transition: all 0.3s ease;
+  }
+  
+  /* Login button animation */
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid .default-text,
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid .hover-text {
+    position: absolute;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid .hover-text {
+    opacity: 0;
+    pointer-events: none; 
+  }
+  
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid:hover {
+    padding: 8px 80px; 
+  }
+  
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid:hover .default-text {
+    opacity: 0;
+  }
+  
+  #landing_page > .container > #navigation_bar > nav > .actions > .btn.solid:hover .hover-text {
+    opacity: 1;
+  }
+  
+  
+  
+  /* Header */
+
+  #landing_page > .container > #hero > .header {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #landing_page > .container > #hero > .header > p {
+    font-size: 20px;
+  }
+
+  /* Arrow */
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    top: 440px;
+    right: 220px;
+    height: 75px;
+  }
+
+  /* Hero Image */
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer {
+    margin-top: 80px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .mockupHeroImage {
+    width: 800px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    width: 200px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .formStatisticsHeroImage {
+    width: 300px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    top: 160px;
+    left: 160px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    top: 150px;
+    right: 100px;
+  }
+
+  /* Rectangle Background */
+
+  #landing_page > .container > #hero > .rectangleBackground {
+    top: 800px;
+  }
+
+  /* Users */
+
+  #landing_page > .container > #hero > .users {
+    margin-top: 870px;
+    gap: 80px;
+  }
+
+  #landing_page > .container > #hero > .users > .logos {
+    gap: 80px;
+  }
+
+  /* Features */
+
+  #landing_page > .container > #features {
+    padding: 80px 0;
+  }
+  
+  #landing_page > .container > #features > .feature {
+    padding: 80px;
+  }
+
+  #landing_page > .container > #features > .feature > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+  }
+
+  #landing_page > .container > #features > .feature:nth-child(even) > div > .headingAndParagraph {
+    order: 2;
+  }
+
+  /* FAQs */
+
+  #landing_page > .container > #faqs > .wrapper {
+    gap: 100px;
+    padding: 120px 100px;
+  }
+
+  /* Heading & Paragraph */
+
+  #landing_page > .container > #faqs > .wrapper > .headingAndParagraph {
+    align-items: center;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .headingAndParagraph > h2 {
+    width: 850px;
+    font-size: 32px;
+  }
+
+  /* Tabs */
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs > .tab {
+    cursor: pointer;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs > .tab:hover {
+    background-color: #E2E2E2;
+  }
+
+  /* Footer */
+
+  #landing_page > .container > footer > .wrapper {
+    flex-direction: row;
+    justify-content: center;
+    padding: 120px 0 200px;
+  }
+}
+
+/* Screen Width: 1440px */
+
+@media only screen and (min-width: 1440px) {
+  /* Hero */
+
+  #landing_page > .container > #hero {
+    padding-top: 80px;
+  }
+  
+  /* Header */
+
+  #landing_page > .container > #hero > .header {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #landing_page > .container > #hero > .header > p {
+    font-size: 20px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    top: 460px;
+    right: 300px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    left: 250px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    top: 148px;
+    right: 155px;
+  }
+
+  /* FAQs */
+
+  #landing_page > .container > #faqs > .wrapper > .stacks {
+    flex-direction: row;
+    margin: 0 auto;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack {
+    gap: 32px;
+    padding: 20px;
+  }
+
+  /* Categories */
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories {
+    height: fit-content;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.categories > .tabs {
+    width: 400px;
+  }
+
+  /* QA */
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa {
+    width: 700px;
+  }
+
+  #landing_page > .container > #faqs > .wrapper > .stacks > .stack.qa > .dropdowns > .dropdown > .answer > p {
+    font-size: 14px;
+  }
+
+  /* Footer */
+
+  /* Form */
+
+  #landing_page > .container > footer > .wrapper > form {
+    width: 550px;
+  }
+}
+
+/* Screen Width: 1550px */
+
+@media only screen and (min-width: 1550px) {
+  /* Arrow */
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    right: 350px;
+  }
+
+  /* Hero Image */
+  
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    left: 300px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    right: 210px;
+  }
+}
+
+/* Screen Width: 1650px */
+
+@media only screen and (min-width: 1650px) {
+  /* Hero */
+
+  #landing_page > .container > #hero {
+    padding-top: 100px;
+  }
+
+  /* Arrow */
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    top: 490px;
+    right: 400px;
+  }
+
+  /* Hero Image */
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    left: 340px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    right: 210px;
+    width: 350px;
+  }
+
+  /* Features */
+
+  #landing_page > .container > #features > .feature > div {
+    gap: 150px;
+  }
+
+  #landing_page > .container > #features > .feature > div > .headingAndParagraph > h2 {
+    font-size: 40px;
+  }
+
+  #landing_page > .container > #features > .feature > div:first-child > .headingAndParagraph > p {
+    font-size: 20px;
+  }
+}
+
+/* Screen Width: 1750px */
+
+@media only screen and (min-width: 1750px) {
+  /* Arrow */
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    right: 460px;
+  }
+
+  /* Hero Image */
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    left: 400px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    right: 270px;
+  }
+
+  /* Users */
+
+  #landing_page > .container > #hero > .users {
+    gap: 100px;
+  }
+
+  #landing_page > .container > #hero > .users > h2 {
+    width: 800px;
+    line-height: 48px;
+  }
+
+  #landing_page > .container > #hero > .users > .logos {
+    gap: 80px;
+  }
+
+  #landing_page > .container > #hero > .users > .logos > div {
+    gap: 110px;
+  }
+}
+
+/* Screen Width: 1800px */
+
+@media only screen and (min-width: 1800px) {
+  /* Arrow */
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    right: 490px;
+  }
+
+  /* Hero Image */
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    left: 430px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    right: 300px;
+  }
+
+  /* Footer */
+
+  #landing_page > .container > footer > .wrapper {
+    gap: 200px;
+  }
+}
+
+/* Screen Width: 1850px */
+
+@media only screen and (min-width: 1850px) {
+  /* Arrow */
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    right: 520px;
+  }
+
+  /* Hero Image */
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    left: 450px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    right: 320px;
+  }
+}
+
+/* Screen Width: 1920px */
+
+@media only screen and (min-width: 1920px) {
+  /* Arrow */
+
+  #landing_page > .container > #hero > .wrapper > .arrow {
+    right: 540px;
+  }
+
+  /* Hero Image */
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .opcrFormTrackerHeroImage {
+    left: 490px;
+  }
+
+  #landing_page > .container > #hero > .wrapper > .heroImageContainer > .imageContainer > .formStatisticsHeroImage {
+    right: 360px;
+  }
+}

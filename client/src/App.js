@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import LandingPage from './pages/LandingPage';
 import AdminRoutes from './routes/AdminRoutes';
 import UserRoutes from './routes/UserRoutes';
 import Login from './auth/Login';
@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} /> 
+        <Route path="/" element={<LandingPage />} /> 
         {/* Public Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
