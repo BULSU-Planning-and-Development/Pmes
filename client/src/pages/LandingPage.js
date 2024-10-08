@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/LandingPage/Header';
 import Hero from '../components/LandingPage/Hero';
+import Features from '../components/LandingPage/Features';
 import '../styles/landing_page.css'
 import { PlanningAndDevelopmentOffice } from '../assets/images';
 
@@ -15,8 +16,11 @@ const HomePage = () => {
         <img src={PlanningAndDevelopmentOffice} alt="Logo" />
         <div className="rectangle"></div>
       </div>
-      <div className="container"> <Header /> 
+      <div className="container">
+        
+      <Header /> 
       <Hero />
+      <Features />
       </div>
      
       {/* <div>

@@ -833,6 +833,7 @@
 
   #landing_page > .container > #navigation_bar {
     height: 80px;
+    z-index: 1;
   }
 
   /* Navigation */
