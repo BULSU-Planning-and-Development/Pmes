@@ -6,6 +6,8 @@ import Hero from '../components/LandingPage/Hero';
 import Features from '../components/LandingPage/Features';
 import '../styles/landing_page.css'
 import { PlanningAndDevelopmentOffice } from '../assets/images';
+import FAQs from '../components/LandingPage/FAQs';
+import Footer from '../components/LandingPage/Footer';
 
 
 const HomePage = () => {
@@ -21,6 +23,8 @@ const HomePage = () => {
       <Header /> 
       <Hero />
       <Features />
+      <FAQs />
+      <Footer />
       </div>
      
       {/* <div>
