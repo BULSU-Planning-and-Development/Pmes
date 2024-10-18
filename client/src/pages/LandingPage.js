@@ -1,13 +1,11 @@
 // src/pages/HomePage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/LandingPage/Header';
-import Hero from '../components/LandingPage/Hero';
-import Features from '../components/LandingPage/Features';
-import '../styles/landing_page.css'
+import { Header, Hero, Features, FAQs, Footer } from '../components/LandingPage/index';
 import { PlanningAndDevelopmentOffice } from '../assets/images';
-import FAQs from '../components/LandingPage/FAQs';
-import Footer from '../components/LandingPage/Footer';
+import '../styles/landing_page.css'
+
+
 
 
 const HomePage = () => {
