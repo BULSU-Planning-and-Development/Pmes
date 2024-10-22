@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronRightIcon } from '../../assets/svg'
 import { ArrowSVG, MockupHeroImage, OPCRFormTrackerHeroImage,FormStatisticsHeroImage, CollegeOfLaw, CollegeOfEducation,CollegeOfBusinessAdministration, GraduateSchool,
     CollegeOfInformationAndCommunicationsTechnology,CollegeOfNursing,CollegeOfArchitectureAndFineArts,
     CollegeOfHospitalityAndTourismManagement,CollegeOfEngineering,CollegeOfCriminalJusticeEducation,
@@ -11,8 +10,8 @@ import { ArrowSVG, MockupHeroImage, OPCRFormTrackerHeroImage,FormStatisticsHeroI
     StudentPublicationOffice,StudentWelfareAndDevelopmentOffice,OfficeOfInternationalAffairs,OfficeOfTheCampusDirectorForExtensionServices,
     GuidanceAndCounselingServiceCenter,AssetManagementUnit,BulacanStateUniversitySarmientoCampusLogo,BulacanStateUniversityMenesesCampusLogo,
     BulacanStateUniversityHagonoyCampusLogo,UniversityInfirmaryUnit,ExternalRelationsAndInternationalization,OfficeOfTheScholarships,
-    LaboratoryHighSchool,HumanResourceManagementOffice,UniversityLibrary,NationalServiceTrainingProgram,
- }  from '../../assets/images'
+    LaboratoryHighSchool,HumanResourceManagementOffice,UniversityLibrary,NationalServiceTrainingProgram,ChevronRightIcon,
+ }  from '../../assets/assets'
 import '../../styles/landing_page.css'  
 
 function Hero() {

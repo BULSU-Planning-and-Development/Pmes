@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Feature1, Feature2, Feature3, Feature4} from '../../assets/images'
+import { Feature1, Feature2, Feature3, Feature4} from '../../assets/assets'
 
 import '../../styles/landing_page.css'  
 

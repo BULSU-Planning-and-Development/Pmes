@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BulSULogo, OPCRLogo } from '../../assets/images';
+import { BulSULogo, OPCRLogo } from '../../assets/assets';
 import '../../styles/landing_page.css';
 
 function Header() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronRightIcon, MinusIcon, PlusIcon } from "../../assets/svg"; // Ensure correct paths for icons
+import { ChevronRightIcon, MinusIcon, PlusIcon } from "../../assets/assets"; // Ensure correct paths for icons
 import { accountFaqs, OPCRFaqs, OOFaqs } from "../utils/index"; // Ensure correct path for FAQs data
 import '../../styles/landing_page.css'; // Ensure correct path for your stylesheet
 
