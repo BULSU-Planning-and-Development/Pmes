@@ -747,3 +747,31 @@
       height: 16px;
     }
   }
+
+/* Custom Scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: var(--persian-plum-50); 
+}
+
+/* Handle (the scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--persian-plum-900); 
+  border-radius: 10px;
+  border: 2px solid var(--persian-plum-50); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--persian-plum-800);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: var(--persian-plum-900) var(--persian-plum-50);
+}
