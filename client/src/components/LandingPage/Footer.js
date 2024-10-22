@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { BulacanStateUniversityLogo, PlanningAndDevelopmentOffice } from '../../assets/images'
+import { BulacanStateUniversityLogo, PlanningAndDevelopmentOffice } from '../../assets/assets'
 import '../../styles/landing_page.css'
 
 function Footer() {
