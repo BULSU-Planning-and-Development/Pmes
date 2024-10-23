@@ -1,0 +1,325 @@
+/* Registration */
+
+#registration {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  min-height: 90vh;
+  background-color: var(--lavender-mist);
+  overflow: hidden;
+}
+
+#registration > .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+}
+
+#registration > .wrapper > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-height: 90%;
+  border-radius: 4px;
+  background-color: var(--white);
+  overflow-y: auto;
+  position: fixed;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+/* Header */
+
+#registration > .wrapper > form > header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+#registration > .wrapper > form > header > .brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#registration > .wrapper > form > header > .brandLogo > .logo {
+  width: 40px;
+  height: 40px;
+}
+
+#registration > .wrapper > form > header > .headingAndSubtitle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#registration > .wrapper > form > header > .headingAndSubtitle > h1 {
+  text-align: center;
+  font-size: 18px;
+}
+
+#registration > .wrapper > form > header > .headingAndSubtitle > p {
+  color: var(--arsenic-gray);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Input Fields */
+
+#registration > .wrapper > form > .inputFields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+}
+
+#registration > .wrapper > form > .inputFields > .form-group {
+  align-items: center;
+  gap: 16px;
+}
+
+#registration > .wrapper > form > .inputFields > div,
+#registration > .wrapper > form > .inputFields > div > .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#registration > .wrapper > form > .inputFields > div > .wrapper > .form-group {
+  width: 100%;
+}
+
+/* Error Message */
+
+#registration > .wrapper > form > .error-message {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 2px;
+  background-color: #f2d2d4;
+}
+
+#registration > .wrapper > form > .error-message > p {
+  color: var(--error);
+  text-align: center;
+  font-size: 14px;
+}
+
+#registration > .wrapper > form > .error-message > p > a {
+  color: var(--error);
+  font-weight: 600;
+}
+
+/* Actions */
+
+#registration > .wrapper > form > .actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+#registration > .wrapper > form > .actions > .btn {
+  width: 100%;
+}
+
+#registration > .wrapper > form > .actions > .btn.outline:hover {
+  background-color: var(--light-gray);
+}
+
+/* Login Link */
+
+#registration > .wrapper > form > .loginLink > p {
+  text-align: center;
+  font-size: 14px;
+}
+
+#registration > .wrapper > form > .loginLink > p > a {
+  color: var(--tahiti-gold);
+}
+
+/* Terms & Privacy Policy */
+
+#registration > .wrapper > form > .termsAndPrivacyPolicy > p {
+  text-align: center;
+  font-size: 14px;
+}
+
+#registration > .wrapper > form > .termsAndPrivacyPolicy > p > a {
+  color: var(--arsenic-gray);
+  font-weight: 600;
+}
+
+/* Screen Width: Max 767px */
+
+@media only screen and (max-width: 767px) {
+  /* Registration */
+
+  #registration {
+    justify-content: center;
+  }
+
+  #registration > .wrapper {
+    padding: 16px;
+  }
+
+  .illustration {
+    display: none;
+  }
+
+  /* Form */
+
+  #registration > .wrapper > form {
+    width: 90%;
+    padding: 16px;
+    max-height: 90%;
+  }
+
+  #registration > .wrapper > form > header,
+  #registration > .wrapper > form > .inputFields,
+  #registration > .wrapper > form > .actions {
+    width: 90%;
+  }
+
+  /* Form */
+
+  form {
+    gap: 20px;
+  }
+
+  form > * {
+    width: 90%;
+  }
+
+  #registration > .wrapper > form > header > .brandLogo {
+    display: none;
+  }
+}
+
+/* Screen Width: 768px */
+
+@media only screen and (min-width: 768px) {
+  /* Registration */
+
+  #registration {
+    justify-content: center;
+  }
+
+  #registration > .wrapper {
+    padding: 48px;
+  }
+
+  .illustration {
+    display: none;
+  }
+
+  /* Form */
+
+  #registration > .wrapper > form {
+    width: fit-content;
+    padding: 48px;
+    max-height: 90%;
+  }
+
+  #registration > .wrapper > form > header,
+  #registration > .wrapper > form > .inputFields,
+  #registration > .wrapper > form > .actions {
+    width: 90%;
+  }
+
+  /* Form */
+
+  form {
+    gap: 40px;
+  }
+
+  form > * {
+    width: 90%;
+  }
+
+  /* Screen Width: 1280px */
+
+  @media only screen and (min-width: 1280px) {
+    /* Header  */
+
+    form > header > .headingAndSubtitle > h1 {
+      font-size: 24px;
+    }
+
+    form > header > .headingAndSubtitle > p {
+      font-size: 16px;
+    }
+  }
+
+  /* Screen Width: 1440px */
+
+  @media only screen and (min-width: 1440px) {
+    /* Form */
+
+    form {
+      margin: 120px 45% 0 0;
+      padding-top: 0;
+    }
+
+    /* Illustration */
+
+    .illustration {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 96px;
+      width: 45%;
+      height: 100vh;
+      padding: 64px;
+      background-color: #671e1e;
+    }
+  }
+
+  /* Heading & Paragarph */
+
+  .illustration > .headingAndParagraph {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .illustration > .headingAndParagraph > h2 {
+    color: var(--white);
+    text-align: center;
+  }
+
+  .illustration > .headingAndParagraph > p {
+    color: var(--gray);
+    text-align: center;
+  }
+
+  /* Login Illustration */
+
+  .illustration > .loginIllustration {
+    z-index: 1;
+    width: 350px;
+  }
+
+  .illustration > .backgroundElement {
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    transform: translateY(-50%);
+  }
+
+  p > .note {
+    word-break: break-all;
+  }
+}
